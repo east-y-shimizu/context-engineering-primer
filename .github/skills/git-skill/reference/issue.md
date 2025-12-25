@@ -9,13 +9,32 @@ GitHubでIssueを作成する手順です。
 
 ## 基本的な流れ
 
-1. Issue内容の整理
+1. Issue内容の整理（`docs/ISSUES.md`から読み取る、または手動で整理）
 2. Issueの作成
 3. Issueの詳細設定（ラベル、担当者など）
+4. （オプション）Issue番号を`docs/ISSUES.md`に紐づけ
 
 ## 手順
 
 ### 1. Issue内容を整理
+
+#### パターンA: `docs/ISSUES.md`から読み取る（推奨）
+
+[issue-breakdown-skill](../../issue-breakdown-skill/SKILL.md)を使って作成した`docs/ISSUES.md`がある場合:
+
+1. `docs/ISSUES.md`を読む
+2. 各Issueの情報を抽出:
+   - タイトル
+   - 目的
+   - 実装内容
+   - DoD（完了条件）
+   - ブランチ名
+   - 依存関係
+   - ラベル
+
+3. Issue文書の番号とGitHub Issue番号を紐づけるため、作成後に`docs/ISSUES.md`を更新
+
+#### パターンB: 手動で整理
 
 以下の情報を明確にします：
 
@@ -51,7 +70,7 @@ gh issue create --template bug_report.md
 
 **ラベルを指定:**
 ```bash
-gh issue create --label fix
+gh issue create --label enhancement
 ```
 
 **担当者を指定:**
@@ -67,6 +86,56 @@ gh issue create --milestone v1.0
 **プロジェクトに追加:**
 ```bash
 gh issue create --project "Project Name"
+```
+
+### 4. `docs/ISSUES.md`にGitHub Issue番号を紐づけ（推奨）
+
+`docs/ISSUES.md`からIssueを作成した場合、GitHub Issue番号を文書に記録します。
+
+#### 手順
+
+1. Issueを作成したら、GitHub Issue番号を取得
+   ```bash
+   # 最新のIssue番号を確認
+   gh issue list --limit 1
+   ```
+
+2. `docs/ISSUES.md`の対応するIssueセクションにGitHub Issue番号を追記
+
+   **更新前:**
+   ```markdown
+   ## Issue #1: プロジェクトセットアップ
+
+   **タイトル**: `feat: プロジェクトセットアップ`
+   ```
+
+   **更新後:**
+   ```markdown
+   ## Issue #1: プロジェクトセットアップ（GitHub: #42）
+
+   **タイトル**: `feat: プロジェクトセットアップ`
+   **GitHub Issue**: #42
+   ```
+
+3. これにより、Issue文書とGitHub Issueの対応関係が明確になります
+
+#### 複数のIssueを一括作成する場合
+
+```bash
+# 例: docs/ISSUES.mdから3つのIssueを作成
+# Issue #1を作成
+gh issue create --title "feat: プロジェクトセットアップ" --body "..." --label "enhancement"
+# → GitHub Issue #42 が作成される
+
+# Issue #2を作成
+gh issue create --title "feat: 型定義とAPI連携" --body "..." --label "enhancement"
+# → GitHub Issue #43 が作成される
+
+# Issue #3を作成
+gh issue create --title "feat: コアコンポーネント実装" --body "..." --label "enhancement"
+# → GitHub Issue #44 が作成される
+
+# docs/ISSUES.md を更新して対応関係を記録
 ```
 
 ## Issueテンプレートの活用

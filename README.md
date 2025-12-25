@@ -49,13 +49,21 @@ docs/          # ドキュメント
 
 実践的な開発ワークフローを学ぶハンズオン演習を用意しています：
 
-- [バーコード読み取りアプリ開発ハンズオン](docs/hands-on/barcode-app.md)
+- [バーコード読み取りアプリ開発ハンズオン](docs/hands-on/README.md)
   - 要件定義からIssue分解、TDD実装、リファクタリング、PR作成までの一連のフローを実践
+  - エージェントスキル（issue-breakdown-skill、git-skill、tdd-skill、refactor-skill）を活用
   - Git/GitHub運用、TDD、リファクタリングのベストプラクティスを学習
+
+## スキル
+
+このリポジトリには、開発に役立つエージェントスキルが用意されています：
+
+- [issue-breakdown-skill](.github/skills/issue-breakdown-skill/SKILL.md) - 要件をIssueに分解
+- [git-skill](.github/skills/git-skill/SKILL.md) - Git/GitHub運用（コミット、PR、Issue、ラベル）
+- [tdd-skill](.github/skills/tdd-skill/SKILL.md) - TDD開発（Red-Green-Refactor、KISS原則）
+- [refactor-skill](.github/skills/refactor-skill/SKILL.md) - リファクタリング（SOLID、DRY、YAGNI、Tidy First）
 
 ## ドキュメント
 
-- [スラッシュコマンドの使い方](docs/02_slash-commands.md)
-- [カスタムエージェントの使い方](docs/03_custom-agents.md)
-- [エージェントスキルの使い方](docs/04_agent-skills.md)
+- [知識ベース](docs/knowledge/) - コンテキストエンジニアリングの基礎知識
 
