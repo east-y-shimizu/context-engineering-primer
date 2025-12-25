@@ -38,7 +38,38 @@
 
 ---
 
-## Step 2: Issue分解する
+## Step 2: Deepwiki MCPで技術調査する
+
+### やること
+- [ ] Deepwiki MCPを使って@ericblade/quagga2の使い方を調べる
+
+### 手順
+
+エージェントに以下のように依頼してください：
+
+```
+Deepwiki MCPを使って、@ericblade/quagga2 の使い方を調べてください。
+特に、バーコード読み取りの実装方法とReactでの使用例を教えてください。
+```
+
+**MCPが自動的に**:
+1. Deepwiki MCPサーバーに接続
+2. @ericblade/quagga2のドキュメントを検索
+3. バーコード読み取りの実装例を取得
+4. Reactでの使用方法を説明
+
+**確認項目**:
+- [ ] quagga2の基本的な使い方を理解した
+- [ ] Reactコンポーネントでの実装イメージが掴めた
+- [ ] 必要な設定項目を把握した
+
+**ヒント**:
+- MCPサーバーは`.vscode/mcp.json`で設定済み
+- 調査結果はIssue実装時の参考にする
+
+---
+
+## Step 3: Issue分解する
 
 ### やること
 - [ ] issue-breakdown-skillを使って要件をIssueに分解する
@@ -68,7 +99,7 @@ Issueに分解してください。結果をdocs/hands-on/ISSUES.mdに出力し�
 
 ---
 
-## Step 3: GitHub Issueを登録する
+## Step 4: GitHub Issueを登録する
 
 ### やること
 - [ ] git-skillを使ってGitHub Issueを登録する
@@ -110,7 +141,7 @@ gh issue create \
 
 ---
 
-## Step 4: Issue #1を実装する（プロジェクトセットアップ）
+## Step 5: Issue #1を実装する（プロジェクトセットアップ）
 
 ### やること
 - [ ] ブランチを作成する
@@ -119,7 +150,7 @@ gh issue create \
 
 ### 手順
 
-#### 4-1. ブランチを作成
+#### 5-1. ブランチを作成
 
 エージェントに以下のように依頼してください：
 
@@ -134,7 +165,7 @@ git pull origin main
 git checkout -b feat/setup-project
 ```
 
-#### 4-2. TDD実装
+#### 5-2. TDD実装
 
 エージェントに以下のように依頼してください：
 
@@ -158,7 +189,7 @@ git checkout -b feat/setup-project
 - [ ] `npm run test` でテストが実行できる
 - [ ] `npm run build` でビルドが成功する
 
-#### 4-3. コミット
+#### 5-3. コミット
 
 エージェントに以下のように依頼してください：
 
@@ -172,7 +203,7 @@ git add .
 git commit -m "feat: Vite + React + TypeScript プロジェクトをセットアップ"
 ```
 
-#### 4-4. プッシュとPR作成
+#### 5-4. プッシュとPR作成
 
 エージェントに以下のように依頼してください：
 
@@ -193,7 +224,7 @@ gh pr create --title "feat: プロジェクトセットアップ" --body "..."
 
 ---
 
-## Step 5: リファクタリング（必要に応じて）
+## Step 6: リファクタリング（必要に応じて）
 
 ### やること
 - [ ] refactor-skillを使ってコードを改善する
@@ -213,7 +244,7 @@ gh pr create --title "feat: プロジェクトセットアップ" --body "..."
 
 ---
 
-## Step 6: PR マージ後、次のIssueへ
+## Step 7: PR マージ後、次のIssueへ
 
 ### やること
 - [ ] PRがマージされたらブランチを削除
@@ -237,7 +268,7 @@ git checkout -b feat/openbd-api
 
 ---
 
-## Step 7: Issue #2〜#7を繰り返す
+## Step 8: Issue #2〜#7を繰り返す
 
 Issue #2以降も同じワークフローを繰り返します：
 
