@@ -1,0 +1,16 @@
+{
+	"servers": {
+		"Deepwiki": {
+			"url": "https://mcp.deepwiki.com/mcp",
+			"type": "http"
+		},
+		"playwright": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"@playwright/mcp@latest"
+			]
+		}
+	},
+	"inputs": []
+}
