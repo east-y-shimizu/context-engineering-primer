@@ -87,6 +87,11 @@ export interface BookInfo {
  * OpenBD APIのレスポンス型
  * 
  * @see https://openbd.jp/
+ * 
+ * @remarks
+ * pubdateフィールドは生のstring型です。BookInfo型に変換する際は、
+ * createYYYYMMDDString()を使用してバリデーション済みの
+ * YYYYMMDDString型に変換してください。
  */
 export interface OpenBDResponse {
   /** 書籍情報の要約 */
@@ -95,6 +100,11 @@ export interface OpenBDResponse {
     title: string;
     author?: string;
     publisher?: string;
+    /** 
+     * 発行日（YYYYMMDD形式の文字列、未検証）
+     * 
+     * BookInfo型に変換する際は createYYYYMMDDString() で検証すること
+     */
     pubdate?: string;
     cover?: string;
   };
